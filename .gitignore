@@ -1,0 +1,9 @@
+__pycache__
+build
+dist
+store.db
+part_manager.spec
+.vscode
+.DS_Store
+.idea
+app/.idea
