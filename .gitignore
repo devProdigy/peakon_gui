@@ -7,3 +7,4 @@ part_manager.spec
 .DS_Store
 .idea
 app/.idea
+app/quiz_db.sqlite
