@@ -5,10 +5,14 @@
 #    pip-compile --output-file=app/requirements/requirements.txt app/requirements/requirements.in
 #
 altgraph==0.17            # via -r app/requirements/requirements.in, macholib, pyinstaller
+click==7.1.1              # via -r app/requirements/requirements.in, pip-tools
 future==0.18.2            # via -r app/requirements/requirements.in
 invoke==1.4.1             # via -r app/requirements/requirements.in
 macholib==1.14            # via -r app/requirements/requirements.in, pyinstaller
+pip-tools==5.0.0          # via -r app/requirements/requirements.in
 pyinstaller==3.6          # via -r app/requirements/requirements.in
+six==1.14.0               # via -r app/requirements/requirements.in, pip-tools
 
 # The following packages are considered to be unsafe in a requirements file:
+# pip
 # setuptools

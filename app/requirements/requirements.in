@@ -1,5 +1,8 @@
-altgraph>=0.17
-future>=0.18.2
-invoke>=1.4.1
-macholib>=1.14
-PyInstaller>=3.6
+altgraph==0.17
+click==7.1.1
+future==0.18.2
+invoke==1.4.1
+macholib==1.14
+pip-tools==5.0.0
+PyInstaller==3.6
+six==1.14.0
