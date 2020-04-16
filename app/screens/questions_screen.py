@@ -84,7 +84,7 @@ class QuestionsScreen(tk.Frame):
         comment_entry.grid(row=9, column=0, columnspan=10, ipady=10)
 
         next_question_btn = ttk.Button(
-            self, text="Nex question", width=12, style=BUTTONS_STYLE_NAME, command=self.next_question,
+            self, text="Next question", width=12, style=BUTTONS_STYLE_NAME, command=self.next_question,
         )
         next_question_btn.grid(row=10, column=7, columnspan=3, pady=30)
 

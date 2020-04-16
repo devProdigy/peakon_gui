@@ -29,3 +29,6 @@ https://stackoverflow.com/questions/20044559/how-to-pip-or-easy-install-tkinter-
 > source .venv/bin/activate  
 > cd app/  
 > invoke build
+
+### For Windows:
+> ../venv/Scripts/pyinstaller.exe run.py --onefile --windowed --noconsole
