@@ -6,7 +6,6 @@ from styles import BUTTONS_STYLE_NAME, apply_button_style
 
 
 class ResultsScreen(tk.Frame):
-
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
 
@@ -21,19 +20,11 @@ class ResultsScreen(tk.Frame):
         self.results_list.configure(yscrollcommand=scrollbar.set)
         scrollbar.configure(command=self.results_list.yview)
 
-        quit_btn = ttk.Button(
-            self,
-            text="Close app",
-            style=BUTTONS_STYLE_NAME,
-            command=self.quit_app,
-        )
+        quit_btn = ttk.Button(self, text="Close app", style=BUTTONS_STYLE_NAME, command=self.quit_app,)
         quit_btn.grid(row=26, column=0, columnspan=1, pady=5)
 
         next_question_btn = ttk.Button(
-            self,
-            text="Show results",
-            style=BUTTONS_STYLE_NAME,
-            command=self.populate_results,
+            self, text="Show results", style=BUTTONS_STYLE_NAME, command=self.populate_results,
         )
         next_question_btn.grid(row=26, column=2, columnspan=3, pady=5)
 

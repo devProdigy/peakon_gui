@@ -1,12 +1,24 @@
 import tkinter as tk
 from tkinter import messagebox, ttk
 
-from constants import (LARGE_FONT, QUESTIONS, QUESTIONS_AMOUNT, QUESTIONS_COUNTER,
-                       SCORE_BTNS_AMOUNT, SCREEN_HEIGHT, SCREEN_WIDTH)
+from constants import (
+    LARGE_FONT,
+    QUESTIONS,
+    QUESTIONS_AMOUNT,
+    QUESTIONS_COUNTER,
+    SCORE_BTNS_AMOUNT,
+    SCREEN_HEIGHT,
+    SCREEN_WIDTH,
+)
 from db.database import db_instance
 from screens.results_screen import ResultsScreen
-from styles import (BUTTONS_STYLE_NAME, apply_button_style, apply_disabled_status,
-                    apply_score_button_style, clear_score_buttons_styles)
+from styles import (
+    BUTTONS_STYLE_NAME,
+    apply_button_style,
+    apply_disabled_status,
+    apply_score_button_style,
+    clear_score_buttons_styles,
+)
 
 X_PADDING = 20
 
@@ -25,13 +37,16 @@ class QuestionsScreen(tk.Frame):
         apply_button_style()
 
         # QUESTION -/-
-        question_counter_label = tk.Label(self, textvariable=self.question_counter, font=LARGE_FONT, padx=X_PADDING, pady=20)
+        question_counter_label = tk.Label(
+            self, textvariable=self.question_counter, font=LARGE_FONT, padx=X_PADDING, pady=20
+        )
         question_counter_label.config(anchor=tk.CENTER)
         question_counter_label.grid(row=0, column=0, columnspan=SCORE_BTNS_AMOUNT, rowspan=1)
 
         # Question itself
-        question_label = tk.Label(self, textvariable=self.question_text, font=LARGE_FONT, wraplength=SCREEN_WIDTH - 50,
-                                  padx=X_PADDING)
+        question_label = tk.Label(
+            self, textvariable=self.question_text, font=LARGE_FONT, wraplength=SCREEN_WIDTH - 50, padx=X_PADDING
+        )
         question_label.config(anchor=tk.CENTER)
         question_label.grid(row=1, column=0, columnspan=SCORE_BTNS_AMOUNT)
 
@@ -61,7 +76,7 @@ class QuestionsScreen(tk.Frame):
         self.grid_rowconfigure(7, minsize=20)
 
         # Comment
-        comment_label = tk.Label(self, text='Comment (optional):', font=LARGE_FONT, padx=X_PADDING)
+        comment_label = tk.Label(self, text="Comment (optional):", font=LARGE_FONT, padx=X_PADDING)
         comment_label.grid(row=8, column=0, columnspan=3)
 
         self.comment_text = tk.StringVar()
@@ -69,18 +84,14 @@ class QuestionsScreen(tk.Frame):
         comment_entry.grid(row=9, column=0, columnspan=10, ipady=10)
 
         next_question_btn = ttk.Button(
-            self,
-            text="Nex question",
-            width=12,
-            style=BUTTONS_STYLE_NAME,
-            command=self.next_question,
+            self, text="Nex question", width=12, style=BUTTONS_STYLE_NAME, command=self.next_question,
         )
         next_question_btn.grid(row=10, column=7, columnspan=3, pady=30)
 
     def next_question(self):
         # check if any of the score buttons were clicked
         if self.current_clicked_btn_index is None:
-            messagebox.showerror('Missing score', 'Please, choose the score button first.')
+            messagebox.showerror("Missing score", "Please, choose the score button first.")
             return
 
         # save result of the question
@@ -110,7 +121,7 @@ class QuestionsScreen(tk.Frame):
     @staticmethod
     def popup_msg(msg: str, title: str):
         popup = tk.Tk()
-        popup.geometry(f'{int(SCREEN_WIDTH/2)}x{int(SCREEN_HEIGHT/2)}')
+        popup.geometry(f"{int(SCREEN_WIDTH/2)}x{int(SCREEN_HEIGHT/2)}")
         popup.wm_title(title)
         label = ttk.Label(popup, text=msg, font=LARGE_FONT, width=40, padding=40)
         label.pack(side="top", fill="both", pady=10)

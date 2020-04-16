@@ -5,7 +5,7 @@ LARGE_FONT = (APP_FONT_NAME, 14)
 SCREEN_WIDTH = 700
 SCREEN_HEIGHT = 400
 
-with open('app_text.json') as json_file:
+with open("app_text.json") as json_file:
     data = json.load(json_file)
 
 # Welcome screen

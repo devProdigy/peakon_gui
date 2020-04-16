@@ -7,7 +7,6 @@ from screens.welcome_screen import WelcomeScreen
 
 
 class ScreenManager(tk.Tk):
-
     def __init__(self, *args, **kwargs):
         tk.Tk.__init__(self, *args, **kwargs)
         container = tk.Frame(self)
@@ -27,8 +26,6 @@ class ScreenManager(tk.Tk):
             frame.grid(row=0, column=0, sticky="nsew")
 
         self.show_frame(WelcomeScreen)
-        # self.show_frame(QuestionsScreen)
-        # self.show_frame(ResultsScreen)
 
     def show_frame(self, cont):
         frame = self.frames[cont]
@@ -36,7 +33,7 @@ class ScreenManager(tk.Tk):
 
 
 app = ScreenManager()
-app.title('Quiz')
-app.geometry(f'{SCREEN_WIDTH}x{SCREEN_HEIGHT}')
+app.title("Quiz")
+app.geometry(f"{SCREEN_WIDTH}x{SCREEN_HEIGHT}")
 
 app.mainloop()

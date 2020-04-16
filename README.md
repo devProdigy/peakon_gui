@@ -1,30 +1,29 @@
-# Part Manager
+# Quiz app
 
-> Python/Tkinter desktop GUI app to manage customer computer parts. This app uses Sqlite3 to store data
+Python3/Tkinter desktop GUI app for making a quiz.  
+This app uses Sqlite3 to store data.
 
-## Usage
+## Prepare
+####
+Pre-requirements: Python3.7+ should already be installed. 
 
-```bash
-brew install tcl-tk
+#### Install Tkinter
+Mac:
+> brew install tcl-tk
+
+Windows:  
+https://stackoverflow.com/questions/20044559/how-to-pip-or-easy-install-tkinter-on-windows
+
+#### Install dependencies
+> virtualenv venv --python==python/path/python3  
+> source venv/bin/activate  
+> pip install -r app/requirements/requirements.txt
+
+## Run app
+> source venv/bin/activate  
+> python3 app/run.py
 
 
-
-# Install dependencies
-pipenv install
-
-# Run script
-python part_manager.py
-
-
-# Compile with Pyinstaller
-
-# Windows
-pyinstaller --onefile --windowed part_manager.py
-
-# Mac
-pyinstaller --onefile --add-binary='/System/Library/Frameworks/Tk.framework/Tk':'tk' --add-binary='/System/Library/Frameworks/Tcl.framework/Tcl':'tcl' part_manager.py
-```
-
-- Version: 1.0.0
-- License: MIT
-- Author: Brad Traversy
+## Compile with Pyinstaller
+> source venv/bin/activate  
+> invoke build
