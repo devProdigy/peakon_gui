@@ -14,3 +14,9 @@ def build_for_mac(ctx):
 @task
 def build(ctx):
     ctx.run("pyinstaller run.py --onefile --windowed --noconsole", pty=True)
+
+
+@task
+def clear_build_data(ctx):
+    ctx.run("rm run.spec", pty=True)
+    ctx.run("rm -r dist build", pty=True)
