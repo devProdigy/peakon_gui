@@ -1,0 +1,13 @@
+{
+  "GREETINGS": "Hi!\n\nEmployee satisfaction is vital for us. \nWe use this quiz to collect the feedback on:\n - what is working in the organization well; \n - and what requires improvements. \n\nIt will take you about 10 minutes to fill the survey in.\nWe appreciate your honesty and openness.",
+  "QUESTIONS": [
+    "How likely is it you would recommend ___ as a place to work?",
+    "At work, I have the opportunity to do what I do best every day.",
+    "I can have well-informed and constructive conversations with my manager about pay.",
+    "The atmosphere in my team is friendly and easy-going.",
+    "I find my workload manageable.",
+    "My job enables me to learn and develop new skills.",
+    "My manager cares about my opinions.",
+    "Our organization does a good job of communicating the goals and strategies set by senior leadership."
+  ]
+}
