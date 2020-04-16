@@ -1,6 +1,6 @@
 __pycache__
-build
-dist
+app/build
+app/dist
 .vscode
 .DS_Store
 .idea

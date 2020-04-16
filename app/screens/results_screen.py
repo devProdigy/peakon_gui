@@ -1,6 +1,7 @@
 import tkinter as tk
 from tkinter import ttk
 
+from constants import QUESTIONS_AMOUNT
 from db.database import db_instance
 from styles import BUTTONS_STYLE_NAME, apply_button_style
 
@@ -20,19 +21,30 @@ class ResultsScreen(tk.Frame):
         self.results_list.configure(yscrollcommand=scrollbar.set)
         scrollbar.configure(command=self.results_list.yview)
 
-        quit_btn = ttk.Button(self, text="Close app", style=BUTTONS_STYLE_NAME, command=self.quit_app,)
+        quit_btn = ttk.Button(self, text="Close app", style=BUTTONS_STYLE_NAME, command=self.quit_app)
         quit_btn.grid(row=26, column=0, columnspan=1, pady=5)
+
+        copy_btn = ttk.Button(self, text="Copy results", style=BUTTONS_STYLE_NAME, command=self.copy_to_clipboard)
+        copy_btn.grid(row=26, column=1, columnspan=1, pady=5)
 
         next_question_btn = ttk.Button(
             self, text="Show results", style=BUTTONS_STYLE_NAME, command=self.populate_results,
         )
-        next_question_btn.grid(row=26, column=2, columnspan=3, pady=5)
+        next_question_btn.grid(row=26, column=2, columnspan=1, pady=5)
 
     def populate_results(self):
         self.results_list.delete(0, tk.END)
         for row in db_instance.fetch():
             record = f"{row[0]}. '{row[1]}': score - {row[2]}, comment - '{row[3]}'."
             self.results_list.insert(tk.END, record)
+
+    def copy_to_clipboard(self):
+        res = self.results_list.get(0, QUESTIONS_AMOUNT)
+        questions = ";\n".join(res) if res else "No results."
+
+        self.clipboard_clear()
+        self.clipboard_append(questions)
+        self.update()
 
     def quit_app(self):
         self.quit()

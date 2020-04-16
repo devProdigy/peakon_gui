@@ -1,25 +1,27 @@
-import json
-from os import path
-
 APP_FONT_NAME = "Verdana"
 LARGE_FONT = (APP_FONT_NAME, 14)
 SCREEN_WIDTH = 700
 SCREEN_HEIGHT = 400
 
-json_data_file = "app_text.json"
-json_data_file_path = path.join("app", json_data_file)
-
-if not path.exists(json_data_file_path):
-    json_data_file_path = json_data_file
-
-with open(json_data_file_path) as json_file:
-    data = json.load(json_file)
 
 # Welcome screen
-GREETINGS = data["GREETINGS"]
+GREETINGS = (
+    "Hi!\n\nEmployee satisfaction is vital for us. \nWe use this quiz to collect the feedback on:"
+    "\n - what is working in the organization well; \n - and what requires improvements. \n\n"
+    "It will take you about 10 minutes to fill the survey in.\nWe appreciate your honesty and openness."
+)
 
 # Questions screen
 SCORE_BTNS_AMOUNT = 10
-QUESTIONS = data["QUESTIONS"]
+QUESTIONS = [
+    "How likely is it you would recommend ___ as a place to work?",
+    "At work, I have the opportunity to do what I do best every day.",
+    "I can have well-informed and constructive conversations with my manager about pay.",
+    "The atmosphere in my team is friendly and easy-going.",
+    "I find my workload manageable.",
+    "My job enables me to learn and develop new skills.",
+    "My manager cares about my opinions.",
+    "Our organization does a good job of communicating the goals and strategies set by senior leadership.",
+]
 QUESTIONS_AMOUNT = len(QUESTIONS)
 QUESTIONS_COUNTER = "QUESTION {}/" + str(QUESTIONS_AMOUNT)

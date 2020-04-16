@@ -21,9 +21,11 @@ https://stackoverflow.com/questions/20044559/how-to-pip-or-easy-install-tkinter-
 
 ## Run app
 > source .venv/bin/activate  
+> cd app/  
 > python3 app/run.py
 
 
 ## Compile with Pyinstaller
 > source .venv/bin/activate  
+> cd app/  
 > invoke build
